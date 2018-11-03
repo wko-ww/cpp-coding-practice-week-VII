@@ -1,0 +1,1292 @@
+//4.4.6
+#include"pch.h"
+#include <iostream>
+using namespace std;
+int main(void)
+{
+	cout << "乘法表：\n";
+	for (int i = 1; i <= 9; i++)
+	{
+		
+		for (int j = 1; j <= i; j++)
+			cout << i << " * " << j << " = " << i * j << '\t';
+		cout << endl;
+
+	}
+	return 0;
+}
+
+//exercise 3.1
+#include"pch.h"
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main(void)
+{
+	char all;
+	cout << "please input a character:";
+	cin >> all;
+	cout << "the character is:" << all << endl;
+
+	int i;
+	cout << "please input the value of variable i:";
+	cin >> i;
+	cout << "the value you input is:" << i << endl;
+
+	int a = 10, b = 20, c = 30, d = 40;
+	double m = 5.23, n = 100;
+	cout << a << b << endl;
+	cout << c << n - d << endl;
+	cout << m << n << endl;
+
+	cout << a << ',' << b << endl;
+	cout << c << ',' << n - d << endl;
+	cout << m << ',' << n << endl;
+
+	cout << "a=" << a << '\t' << "b=" << b << endl;
+	cout << "c=" << c << '\t' << n << '-' << d << '=' << n - d << endl;
+	cout << "m=" << m << '\t' << "n=" << n << endl;
+
+	double nx = 100.0, ny = 100;
+	cout << nx << ' ' << ny << endl;
+
+	cout << setw(10) << a << setw(10) << b << endl;
+	cout << setw(10) << c << setw(10) << n - d << endl;
+	cout << setw(10) << m << setw(10) << n << endl;
+
+	cout << setw(10) << a << b << endl;
+
+	cout << setw(10) << 100000000000 << setw(10) << 1000000000 << setw(10) << 10 << endl;
+
+	cout << "a=" << oct << a << '\t' << "b=" << b << endl;
+	cout.setf(ios::scientific, ios::floatfield);
+	cout << "c=" << hex << c << '\t' << "n-d=" << n - d << endl;
+	cout << "m=" << m << endl;
+	cout.unsetf(ios::scientific);
+	cout << "m=" << m << '\t' << "n=" << n << endl;
+
+	char c2 = 'a', c3 = 'b';
+	cout << "c2=" << c2 << '\t' << "c3=" << c3 << endl;
+
+}
+
+//exercise 3.2
+#include"pch.h"
+#include<iostream>
+using namespace std;
+int main(void)
+{
+	int a1, b1;
+	float c1, d1;
+	char e1, f1;
+	cin >> a1 >> b1;
+	cin >> c1 >> d1;
+	cin >> e1 >> f1;
+	cout << a1 << ' ' << f1 << endl;
+
+	int g1;
+	cin >> g1;
+	cout << g1 << endl;
+
+	int h1, i1;
+	cin >> h1 >> i1;
+	cout << h1 << ' ' << i1 << '\n';
+
+	int j1;
+	float k1;
+	cin >> k1 >> j1;
+	cout << j1 << ' ' << k1 << endl;
+
+	int a2, b2, c2, d2;
+	cin >> hex >> a2;
+	cin >> oct >> b2;
+	cin >> c2;
+	cin >> dec >> d2;
+	cout << a2 << ',' << b2 << ',' << c2 << ',' << d2 << endl;
+
+	int a3, b3;
+	char c3, d3;
+	cin >> a3 >> b3;
+	cin >> c3 >> d3;
+	cout << a3 << ' ' << b3 << ' ' << c3 << ' ' << d3 << endl;
+
+	cin >> a3 >> b3;
+	cin.ignore(3);
+	cin >> c3 >> d3;
+	cout << a3 << ' ' << b3 << ' ' << c3 << ' ' << d3 << endl;
+
+	char x, y;
+	cin >> x >> y;
+	
+	int a4, b4;
+	char c4, d4;
+	cin >> a4 >> b4;
+	cin.ignore(3);
+	cin >> c4 >> d4; 
+	cout << a4 << ' ' << b4 << ' ' << c4 << ' ' << d4 << endl;
+	
+	char a5, b5, c5, d5;
+	cin.get(a5);
+	cin.get(b5);
+	cin.get(c5);
+	cin.get(d5);
+	cout << a5 << b5 << c5 <<  d5;
+	cout << '-';
+
+	char a6, b6, c6, d6;
+	cin.get(a6);
+	cin.get(b6);
+	cin.get(c6);
+	cin >> d6;
+	cout << a6 << b6  << c6 << d6;
+}
+
+//exercise 4.3.1, 4.3.2, 4.3.3
+#include"pch.h"
+#include<iostream>
+using namespace std;
+int main(void)
+{
+	float a, b, c, max;
+	cout << "please input three numbers:\n";
+	cin >> a >> b >> c;
+	max = a;
+	if (max < b)
+		max = b;
+	if (max < c)
+		max = c;
+	cout << "max=" << max << endl;
+
+	if (a < b)
+		max = b;
+	else
+		max = a;
+	if (max < c)
+		cout << "max=" << c << endl;
+	else
+		cout << "max=" << max << endl;
+
+	if (a >= b && a >= c)
+		cout << "max=" << a << endl;
+	else if (b >= a && b >= c)
+		cout << "max=" << b << endl;
+	else
+		cout << "max=" << c << endl;
+
+	float score;
+	cout << "please input your grade:\n";
+	cin >> score;
+	if (score >= 90)
+		cout << "grade:A\n";
+	else if (score >= 80)
+		cout << "grade:B\n";
+	else if (score >= 70)
+		cout << "grade:C\n";
+	else if (score >= 60)
+		cout << "grade:D\n";
+	else cout << "grade:E\n";
+	cout << "         \n";
+
+	//如果上面不用else if 输出多个
+	cout << "please input your grade:\n";
+	cin >> score;
+	if (score >= 90)
+		cout << "grade:A\n";
+	if (score >= 80)
+		cout << "grade:B\n";
+	if (score >= 70)
+		cout << "grade:C\n";
+	if (score >= 60)
+		cout << "grade:D\n";
+	else cout << "grade:E\n";
+
+	float x, y;
+	cout << "please input the value of i:\n";
+	cin >> x;
+	if (x <= 10)
+		if (x < 10)
+			y = -10;
+		else
+			y = 5;
+	else
+		y = 20;
+	cout << "y=" << y << '\n';
+
+	int a1, b1, max1;
+	cout << "input a and b:\n";
+	cin >> a1 >> b1;
+	max1 = a1 > b1 ? a1 : b1; 
+	cout << "max=" << max << endl;
+
+	int c1, x1;
+	cout << "input c\n";
+	cin >> c1;
+	x1 = a1 > b1 ? a1 : c1 < b1 ? c1 : b1;
+	cout << "x1=" << x1 << '\n';
+
+	max1 = (a1 > b1 ? a1 : b1) < c1 ? c1 : a1 > b1 ? a1 : b1;
+	cout << "max=" << max << '\n';
+	max1 = a1 > b1 ? a1 : b1 < c1 ? c1 : a1 > b1 ? a1 : b1;
+	cout << "max=" << max << '\n';
+}
+
+//exercise 4.4.6
+#include"pch.h"
+#include<iostream>
+using namespace std;
+int main(void)
+{
+	for (int i = 1; i <= 9; i++)
+	{
+		for (int j = 1; j <= i; j++)
+			cout << j << '*' << i << '=' << i * j << '\t';
+		cout << endl;
+	}
+}
+
+//exercise ii 4.3.4
+#include"pch.h"
+#include <iostream>
+using namespace std;
+int main(void)
+{
+	char grade;
+	cin >> grade;
+	switch (grade)
+	{
+	case 'A':cout << "优" << endl; break;
+	default: cout << "不及格" << endl; //此处default可前置
+	case 'B':cout << "良" << endl; break;
+	case 'C':cout << "中" << endl; break;
+	case 'D':cout << "及格" << endl; break;
+	
+	}
+	
+	int x;
+	cout << "输入一个[-2, 2]之内的整数\n";
+	cin >> x;
+	switch (x)
+	{
+	case -2:
+	case -1:cout << "负数\n";
+		break;
+	case 0:cout << "零\n";
+		break;
+	case 1:
+	case 2:cout << "正数\n";
+	}
+
+	switch (grade)
+	{
+	case'A':
+	case'B':
+	
+	case'C':
+	case'D':cout << "及格\n"; break;
+	default: cout << "不及格\n";// 此处不能前置default 不然会输出
+
+	}
+
+	//如果有case'1': case'2': statement; break; default可能不可以前置
+
+}
+
+//exercise iii 4.4
+#include"pch.h"
+#include<iostream>
+using namespace std;
+int main(void)
+{
+	int i = 1, sum = 0;
+loop:if (i <= 100)
+{
+	sum += i;
+	i++;
+	goto loop; //在大括号里面
+}
+	 cout << i << ' ' << sum << '\n';
+
+	 i = 1, sum = 0;
+	 while (i <= 100)
+	 {
+		 sum += i;
+		 i++;
+	 }
+	 cout << i << ' ' << sum << '\n';
+
+	 int sum1 = 0;
+	 for (int i1 = 1; i1 <= 100; i1++)
+		 sum1 += i1;
+	 cout << sum1 << '\n';
+
+	 sum1 = 0;
+	 int i1 = 1;
+	 for (; i1 <= 100; i1++)
+		 sum1 += i1;
+	 cout << i1 << ' ' << sum1 << '\n';
+
+	 sum1 = 0;
+	 for (int i1 = 1; i1 <= 100; )
+	 {
+		 sum1 += i1;
+		 i1++;
+	 }
+	 cout << sum1 << '\n';
+
+	 int i2 = 1, sum2 = 0;
+	 do {
+		 sum2 += i1;
+		 i2++;
+	 } while (i2 <= 100);
+	 cout << sum2 << endl;
+
+	 int i3 = 1, sum3 = 0;
+	 cin >> i3;
+	 while (i3 <= 5)
+	 {
+		 sum3 += i3;
+		 i3++;
+	 }
+	 cout << sum3 << endl;
+
+	 int i4 = 1, sum4 = 0;
+	 cin >> i4;
+	 do {
+		 sum4 += i4;
+		 i4++;
+	 } while (i4 <= 5);
+	 cout << i4 << endl;
+
+	 for (int i5 = 1; ; i5++)
+	 {
+		 cout << i5 << endl;
+		 if (i5 >= 10) break;
+	 }
+
+	 int i6;
+	 for (i6 = 1; i6 <= 4; i6++)
+	 {
+		 int x;
+		 x = i6 * i6;
+		 if (x == 9) break;
+		 cout << x << endl;
+	 }
+	 cout << "i6=" << i6 << endl;
+
+	 int i7;
+	 for (i7 = 1; i7 <= 4; i7++)
+	 {
+		 int x;
+		 x = i7 * i7;
+		 if (x == 9) continue;
+		 cout << x << endl;
+	 }
+	 cout << "i7=" << i7 << endl;
+
+	 int a, b, c;
+	 cout << "输入两个整数：\n";
+	 cin >> a >> b;
+	 c = a < b ? a : b;
+	 for (; c >= 1; c--)
+		 if (a % c == 0 && b % c == 0) 
+			 break;
+	 cout << "最大公约数：" << c << endl;
+	 c = a > b ? a : b;
+	 for (; c <= a * b; c++)
+		 if (c % a == 0 && c % b == 0)
+			 break;
+	 cout << "最小公倍数：" << c << endl; 
+}
+
+//rand() max
+#include"pch.h"
+#include <iostream>
+#include <stdlib.h>
+#include <ctime>
+using namespace std;
+int main(void)
+{
+	srand(time(NULL));
+	int a = rand();
+	for (double i = 0; i <= 10000000; i++)
+	{
+		int b = rand();
+		if (a < b)
+
+			a = b;
+		else
+			;
+		
+	}
+
+	cout << a << endl;
+	// max = 32767
+
+	cout << "int: \t\t" << "所占字节数：" << sizeof(int);
+	cout << "\t最大值：" << (numeric_limits<int>::max)(); //2147483647
+	cout << "\t最小值：" << (numeric_limits<int>::min)() << endl; //-2147483648
+}
+
+//实验四-1
+//a+b=?
+#include"pch.h"
+#include <iostream>
+#include <stdlib.h> 
+#include <time.h>  
+using namespace std;
+
+int main()
+{
+	int a, b, c;
+	srand((unsigned)time(NULL));
+	a = rand();
+	b = rand();
+	cout << a << "+" << b << "=?\n";
+	cout << "Please input your answer:";
+	cin >> c;
+	cout << "The right answer is:" << a << "+" << b << "=" << a + b << endl;
+	cout << "Your answer is     :" << a << "+" << b << "=" << c << endl;
+	return 0;
+}
+
+//实验四-1-思考1
+#include"pch.h"
+#include <iostream>
+#include <stdlib.h> 
+#include <time.h>  
+using namespace std;
+
+int main()
+{
+	int a, b, c;
+	srand((unsigned)time(NULL));
+	a = rand();
+	b = rand();
+	cout << a << "+" << b << "=?\n";
+	cout << "Please input your answer:";
+	cin >> c;
+	if (c == a + b)
+		cout << "Right!\n";
+	else
+		cout << "Wrong!\n";
+	cout << "The right answer is:" << a << "+" << b << "=" << a + b << endl;
+	cout << "Your answer is     :" << a << "+" << b << "=" << c << endl;
+	return 0;
+}
+
+//实验四-1-思考2
+#include"pch.h"
+#include <iostream>
+#include <stdlib.h> 
+#include <time.h>  
+using namespace std;
+
+int main()
+{
+	int a, b, c;
+	srand((unsigned)time(NULL));
+	a = rand();
+	b = rand();
+	cout << a << "+" << b << "=?\n";
+	for (int i = 1; i <= 3; i++)
+	{
+		cout << "Please input your answer:";
+		cin >> c;
+		if (c == a + b)
+		{
+			cout << "Good!\n";
+			break;
+		}
+		else
+			cout << "Wrong!\n";	//留意是否需要换行
+	}
+	cout << "The right answer is:" << a << "+" << b << "=" << a + b << endl;
+	cout << "Your answer is     :" << a << "+" << b << "=" << c << endl;
+	return 0;
+}
+
+//实验四-1-拓展
+#include"pch.h"
+#include <iostream>
+#include <stdlib.h> 
+#include <time.h>  
+using namespace std;
+
+int main()
+{
+	int a, b, c;
+	srand((unsigned)time(NULL));
+	a = rand();
+	b = rand();
+	cout << a << "+" << b << "=?\n";
+	while (true)
+	{
+		cout << "Please input your answer:";
+		cin >> c;
+		if (c == a + b)
+		{
+			cout << "Good!\n";
+			break;
+		}
+		else
+			cout << "Wrong!\n";
+		cout << "press 1 to continue, press 0 to exit.\n";
+		char x;
+		cin >> x;
+		if (x == '0')
+			break;
+		else
+			;
+	}
+	cout << "The right answer is:" << a << "+" << b << "=" << a + b << endl;
+	cout << "Your answer is     :" << a << "+" << b << "=" << c << endl;
+	return 0;
+}
+
+//实验四-1-拓展i
+#include"pch.h"
+#include <iostream>
+#include <stdlib.h> 
+#include <time.h>  
+using namespace std;
+
+int main()
+{
+	int d, e;
+	cout << "输入随机数范围：\n";
+	cin >> d >> e;
+	if (d > e)
+	{
+		int f;
+		f = d;
+		d = e;
+		e = f;
+	}
+
+	int a, b, c;
+	srand((unsigned)time(NULL));
+	a = rand() % (e - d + 1) + d;
+	b = rand() % (e - d + 1) + d;
+	cout << a << "+" << b << "=?\n";
+	while (true)
+	{
+		cout << "Please input your answer:";
+		cin >> c;
+		if (c == a + b)
+		{
+			cout << "Good!\n";
+			break;
+		}
+		else
+			cout << "Wrong!\n";
+		cout << "press 1 to continue, press 0 to exit.\n";
+		char x;
+		cin >> x;
+		if (x == '0')
+			break;
+		else
+			;
+	}
+	cout << "The right answer is:" << a << "+" << b << "=" << a + b << endl;
+	cout << "Your answer is     :" << a << "+" << b << "=" << c << endl;
+	return 0;
+}
+
+//实验四-1-拓展ii
+#include"pch.h"
+#include <iostream>
+#include <stdlib.h> 
+#include <time.h>  
+using namespace std;
+
+int main()
+{
+	double d, e;
+	int g, h;
+	cout << "输入随机数范围：\n";
+	cin >> d >> e;
+
+	if (d > 2147483647 || e > 2147483647)
+	{
+		cout << "最大数不能超过2147483647！ 请重新输入：\n";
+		cin >> d >> e;
+	}
+	
+	if (d > e)
+	{
+		int f;
+		f = d;
+		d = e;
+		e = f;
+	}
+
+	g = d;
+	h = e;
+
+	int a, b, c;
+	srand((unsigned)time(NULL));
+	a = rand() % (h - g + 1) + g;
+	b = rand() % (h - g + 1) + g;
+	cout << a << "+" << b << "=?\n";
+	while (true)
+	{
+		cout << "Please input your answer:";
+		cin >> c;
+		if (c == a + b)
+		{
+			cout << "Good!\n";
+			break;
+		}
+		else
+			cout << "Wrong!\n";
+		cout << "press 1 to continue, press 0 to exit.\n";
+		char x;
+		cin >> x;
+		if (x == '0')
+			break;
+		else
+			;
+	}
+	cout << "The right answer is:" << a << "+" << b << "=" << a + b << endl;
+	cout << "Your answer is     :" << a << "+" << b << "=" << c << endl;
+	return 0;
+}
+
+//实验四-2
+#include"pch.h"
+#include <iostream>
+using namespace std;
+
+/*  错误
+int main(void)
+{
+	cout << "input:\n";
+
+	char char1;
+	cin >> char1; //cin
+	int a = 0;
+	while (char1 != '#')
+	{
+
+		int b = 65, i = 0; //i这里初始化for里面就不用
+		for (; int(char1) != b + i; i++)
+		{
+			b = b + 1;
+		}
+		switch (i)
+		{
+		case 0: a++; break;
+
+		} //到此处会继续循环 因为没有条件使循环结束。
+
+	}
+}
+*/
+
+int main(void)
+{
+	cout << "input:\n";
+
+
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
+	int e = 0;
+
+	int f = 0;
+	int g = 0;
+	int h = 0;
+	int i = 0;
+	int j = 0;
+
+	int k = 0;
+	int l = 0;
+	int m = 0;
+	int n = 0;
+	int o = 0;
+
+	int p = 0;
+	int q = 0;
+	int r = 0;
+	int s = 0;
+	int t = 0;
+
+	int u = 0;
+	int v = 0;
+	int w = 0;
+	int x = 0;
+	int y = 0;
+
+	int z = 0;
+
+
+
+	while (true)
+	{
+		char char1;
+		cin >> char1;
+		if (char1 != '#')
+		{
+			if (char1 == 'a' || char1 == 'A') a++;
+			if (char1 == 'b' || char1 == 'B') b++;
+			if (char1 == 'c' || char1 == 'C') c++;
+			if (char1 == 'd' || char1 == 'D') d++;
+			if (char1 == 'e' || char1 == 'E') e++;
+
+			if (char1 == 'f' || char1 == 'F') f++;
+			if (char1 == 'g' || char1 == 'G') g++;
+			if (char1 == 'h' || char1 == 'H') h++;
+			if (char1 == 'i' || char1 == 'I') i++;
+			if (char1 == 'j' || char1 == 'J') j++;
+
+			if (char1 == 'k' || char1 == 'K') k++;
+			if (char1 == 'l' || char1 == 'L') l++;
+			if (char1 == 'm' || char1 == 'M') m++;
+			if (char1 == 'n' || char1 == 'N') n++;
+			if (char1 == 'o' || char1 == 'O') o++;
+
+			if (char1 == 'p' || char1 == 'P') p++;
+			if (char1 == 'q' || char1 == 'Q') q++;
+			if (char1 == 'r' || char1 == 'R') r++;
+			if (char1 == 's' || char1 == 'S') s++;
+			if (char1 == 't' || char1 == 'T') t++;
+
+			if (char1 == 'u' || char1 == 'U') u++;
+			if (char1 == 'v' || char1 == 'V') v++;
+			if (char1 == 'w' || char1 == 'W') w++;
+			if (char1 == 'x' || char1 == 'X') x++;
+			if (char1 == 'y' || char1 == 'Y') y++;
+
+			if (char1 == 'z' || char1 == 'Z') z++;
+
+
+		}
+
+		else
+			break;
+	}
+	cout << "the number of a is " << a << endl;
+	cout << "the number of b is " << b << endl;
+	cout << "the number of c is " << c << endl;
+	cout << "the number of d is " << d << endl;
+	cout << "the number of e is " << e << endl;
+
+	cout << "the number of f is " << f << endl;
+	cout << "the number of g is " << g << endl;
+	cout << "the number of h is " << h << endl;
+	cout << "the number of i is " << i << endl;
+	cout << "the number of j is " << j << endl;
+
+	cout << "the number of k is " << k << endl;
+	cout << "the number of l is " << l << endl;
+	cout << "the number of m is " << m << endl;
+	cout << "the number of n is " << n << endl;
+	cout << "the number of o is " << o << endl;
+
+	cout << "the number of p is " << p << endl;
+	cout << "the number of q is " << q << endl;
+	cout << "the number of r is " << r << endl;
+	cout << "the number of s is " << s << endl;
+	cout << "the number of t is " << t << endl;
+
+	cout << "the number of u is " << u << endl;
+	cout << "the number of v is " << v << endl;
+	cout << "the number of w is " << w << endl;
+	cout << "the number of x is " << x << endl;
+	cout << "the number of y is " << y << endl;
+
+	cout << "the number of z is " << z << endl;
+
+	float total = q + w + e + r + t + y + u + i + o + p + a + s + d + f + g + h + j + k + l + z + x + c + v + b + n + m;
+	cout << "total:" << total << endl;
+
+	
+}
+
+//实验四-2-1
+#include"pch.h"
+#include <iostream>
+using namespace std;
+int main(void)
+{
+
+	cout << "input\n";
+	char char1;
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
+	int e = 0;
+
+	int f = 0;
+	int g = 0;
+	int h = 0;
+	int i = 0;
+	int j = 0;
+
+	int k = 0;
+	int l = 0;
+	int m = 0;
+	int n = 0;
+	int o = 0;
+
+	int p = 0;
+	int q = 0;
+	int r = 0;
+	int s = 0;
+	int t = 0;
+
+	int u = 0;
+	int v = 0;
+	int w = 0;
+	int x = 0;
+	int y = 0;
+
+	int z = 0;
+	int b1, i1; //while外面函数要用 所以放在while外面定义
+	while (true)
+	{
+		cin >> char1;
+		if (char1 != '#')
+		{ // 需要括号括起来的先把两个括号写好
+			
+			int char2 = int(char1);
+
+			if (char2 >= 97)
+			{
+				b1 = 97;
+				i1 = 0;//在这里赋值，使每个字符输入后b1, i1的值更新，不然会累积
+
+
+				for (; char2 != b1; i1++)
+				{
+					if (i1 == 26) //写26 若25， z后面的字符也会统计在内
+						break;
+					/*
+					i1++;
+					b1 = b1 + i1;错误
+					*/
+
+					b1 = b1 + 1;
+
+
+
+				}
+			}
+
+			if (char2 < 97)
+			{
+				b1 = 65;
+				i1 = 0;//在这里赋值，使每个字符输入后b1, i1的值更新，不然会累积
+
+
+				for (; char2 != b1; i1++)
+				{
+					if (i1 == 26) //写26 若25， z后面的字符也会统计在内
+						break;
+					/*
+					i1++;
+					b1 = b1 + i1;错误
+					*/
+
+					b1 = b1 + 1;
+
+
+
+				}
+			}
+			
+			switch (i1)
+			{
+			case 0: a++; break;
+			case 1: b++; break;
+			case 2: c++; break;
+			case 3: d++; break;
+			case 4: e++; break;
+
+			case 5: f++; break;
+			case 6: g++; break;
+			case 7: h++; break;
+			case 8: i++; break;
+			case 9: j++; break;
+
+			case 10: k++; break;
+			case 11: l++; break;
+			case 12: m++; break;
+			case 13: n++; break;
+			case 14: o++; break;
+
+			case 15: p++; break;
+			case 16: q++; break;
+			case 17: r++; break;
+			case 18: s++; break;
+			case 19: t++; break;
+
+			case 20: u++; break;
+			case 21: v++; break;
+			case 22: w++; break;
+			case 23: x++; break;
+			case 24: y++; break;
+			
+			case 25: z++; break;
+			}
+
+		}
+
+
+		if(char1 == '#')
+			break;
+		
+	}
+	cout << "the number of a is " << a << endl; //定义b之后这里也要加b
+	cout << "the number of b is " << b << endl;
+	cout << "the number of c is " << c << endl;
+	cout << "the number of d is " << d << endl;
+	cout << "the number of e is " << e << endl;
+	
+	cout << "the number of f is " << f << endl;
+	cout << "the number of g is " << g << endl;
+	cout << "the number of h is " << h << endl;
+	cout << "the number of i is " << i << endl;
+	cout << "the number of j is " << j << endl;
+
+	cout << "the number of k is " << k << endl;
+	cout << "the number of l is " << l << endl;
+	cout << "the number of m is " << m << endl;
+	cout << "the number of n is " << n << endl;
+	cout << "the number of o is " << o << endl;
+
+	cout << "the number of p is " << p << endl;
+	cout << "the number of q is " << q << endl;
+	cout << "the number of r is " << r << endl;
+	cout << "the number of s is " << s << endl;
+	cout << "the number of t is " << t << endl;
+
+	cout << "the number of u is " << u << endl;
+	cout << "the number of v is " << v << endl;
+	cout << "the number of w is " << w << endl;
+	cout << "the number of x is " << x << endl;
+	cout << "the number of y is " << y << endl;
+
+	cout << "the number of z is " << z << endl;
+
+}
+
+//实验四-2-拓展1
+#include"pch.h"
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+	cout << "input:\n";
+
+
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
+	int e = 0;
+
+	int f = 0;
+	int g = 0;
+	int h = 0;
+	int i = 0;
+	int j = 0;
+
+	int k = 0;
+	int l = 0;
+	int m = 0;
+	int n = 0;
+	int o = 0;
+
+	int p = 0;
+	int q = 0;
+	int r = 0;
+	int s = 0;
+	int t = 0;
+
+	int u = 0;
+	int v = 0;
+	int w = 0;
+	int x = 0;
+	int y = 0;
+
+	int z = 0;
+
+
+
+	while (true)
+	{
+		char char1;
+		cin >> char1;
+		if (char1 != '#')
+		{
+			if (char1 == 'a' || char1 == 'A') a++;
+			if (char1 == 'b' || char1 == 'B') b++;
+			if (char1 == 'c' || char1 == 'C') c++;
+			if (char1 == 'd' || char1 == 'D') d++;
+			if (char1 == 'e' || char1 == 'E') e++;
+
+			if (char1 == 'f' || char1 == 'F') f++;
+			if (char1 == 'g' || char1 == 'G') g++;
+			if (char1 == 'h' || char1 == 'H') h++;
+			if (char1 == 'i' || char1 == 'I') i++;
+			if (char1 == 'j' || char1 == 'J') j++;
+
+			if (char1 == 'k' || char1 == 'K') k++;
+			if (char1 == 'l' || char1 == 'L') l++;
+			if (char1 == 'm' || char1 == 'M') m++;
+			if (char1 == 'n' || char1 == 'N') n++;
+			if (char1 == 'o' || char1 == 'O') o++;
+
+			if (char1 == 'p' || char1 == 'P') p++;
+			if (char1 == 'q' || char1 == 'Q') q++;
+			if (char1 == 'r' || char1 == 'R') r++;
+			if (char1 == 's' || char1 == 'S') s++;
+			if (char1 == 't' || char1 == 'T') t++;
+
+			if (char1 == 'u' || char1 == 'U') u++;
+			if (char1 == 'v' || char1 == 'V') v++;
+			if (char1 == 'w' || char1 == 'W') w++;
+			if (char1 == 'x' || char1 == 'X') x++;
+			if (char1 == 'y' || char1 == 'Y') y++;
+
+			if (char1 == 'z' || char1 == 'Z') z++;
+
+
+		}
+
+		else
+			break;
+	}
+	cout << "the number of a is " << a << endl;
+	cout << "the number of b is " << b << endl;
+	cout << "the number of c is " << c << endl;
+	cout << "the number of d is " << d << endl;
+	cout << "the number of e is " << e << endl;
+
+	cout << "the number of f is " << f << endl;
+	cout << "the number of g is " << g << endl;
+	cout << "the number of h is " << h << endl;
+	cout << "the number of i is " << i << endl;
+	cout << "the number of j is " << j << endl;
+
+	cout << "the number of k is " << k << endl;
+	cout << "the number of l is " << l << endl;
+	cout << "the number of m is " << m << endl;
+	cout << "the number of n is " << n << endl;
+	cout << "the number of o is " << o << endl;
+
+	cout << "the number of p is " << p << endl;
+	cout << "the number of q is " << q << endl;
+	cout << "the number of r is " << r << endl;
+	cout << "the number of s is " << s << endl;
+	cout << "the number of t is " << t << endl;
+
+	cout << "the number of u is " << u << endl;
+	cout << "the number of v is " << v << endl;
+	cout << "the number of w is " << w << endl;
+	cout << "the number of x is " << x << endl;
+	cout << "the number of y is " << y << endl;
+
+	cout << "the number of z is " << z << endl;
+
+	float total = q + w + e + r + t + y + u + i + o + p + a + s + d + f + g + h + j + k + l + z + x + c + v + b + n + m;
+	cout << "total:" << total << endl;
+
+	cout << "the frequency of a is " << a / total << endl;
+	cout << "the frequency of b is " << b / total << endl;
+	cout << "the frequency of c is " << c / total << endl;
+	cout << "the frequency of d is " << d / total << endl;
+	cout << "the frequency of e is " << e / total << endl;
+
+	cout << "the frequency of f is " << f / total << endl;
+	cout << "the frequency of g is " << g / total << endl;
+	cout << "the frequency of h is " << h / total << endl;
+	cout << "the frequency of i is " << i / total << endl;
+	cout << "the frequency of j is " << j / total << endl;
+
+	cout << "the frequency of k is " << k / total << endl;
+	cout << "the frequency of l is " << l / total << endl;
+	cout << "the frequency of m is " << m / total << endl;
+	cout << "the frequency of n is " << n / total << endl;
+	cout << "the frequency of o is " << o / total << endl;
+
+	cout << "the frequency of p is " << p / total << endl;
+	cout << "the frequency of q is " << q / total << endl;
+	cout << "the frequency of r is " << r / total << endl;
+	cout << "the frequency of s is " << s / total << endl;
+	cout << "the frequency of t is " << t / total << endl;
+
+	cout << "the frequency of u is " << u / total << endl;
+	cout << "the frequency of v is " << v / total << endl;
+	cout << "the frequency of w is " << w / total << endl;
+	cout << "the frequency of x is " << x / total << endl;
+	cout << "the frequency of y is " << y / total << endl;
+	
+	cout << "the frequency of z is " << z / total << endl;
+
+}
+
+//实验四-2-拓展2
+#include"pch.h"
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+	char filename[40], ch;
+	
+	fstream  infile;                             
+
+	cout << "Please input a filename: "; //包括拓展名
+	cin >> filename;
+	infile.open(filename, ios::in);  //要打开的文件放在和cpp.拓展名的文件一样的文件夹内
+	if (!infile)
+	{
+		cout << "Can not open file: " << filename << endl;
+		exit(1);
+	}
+	infile.unsetf(ios::skipws); 
+
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
+	int e = 0;
+
+	int f = 0;
+	int g = 0;
+	int h = 0;
+	int i = 0;
+	int j = 0;
+
+	int k = 0;
+	int l = 0;
+	int m = 0;
+	int n = 0;
+	int o = 0;
+
+	int p = 0;
+	int q = 0;
+	int r = 0;
+	int s = 0;
+	int t = 0;
+
+	int u = 0;
+	int v = 0;
+	int w = 0;
+	int x = 0;
+	int y = 0;
+
+	int z = 0;
+
+	while (infile >> ch)                      
+	{
+		if (ch != '#')
+		{
+			if (ch == 'a' || ch == 'A') a++;
+			if (ch == 'b' || ch == 'B') b++;
+			if (ch == 'c' || ch == 'C') c++;
+			if (ch == 'd' || ch == 'D') d++;
+			if (ch == 'e' || ch == 'E') e++;
+
+			if (ch == 'f' || ch == 'F') f++;
+			if (ch == 'g' || ch == 'G') g++;
+			if (ch == 'h' || ch == 'H') h++;
+			if (ch == 'i' || ch == 'I') i++;
+			if (ch == 'j' || ch == 'J') j++;
+
+			if (ch == 'k' || ch == 'K') k++;
+			if (ch == 'l' || ch == 'L') l++;
+			if (ch == 'm' || ch == 'M') m++;
+			if (ch == 'n' || ch == 'N') n++;
+			if (ch == 'o' || ch == 'O') o++;
+
+			if (ch == 'p' || ch == 'P') p++;
+			if (ch == 'q' || ch == 'Q') q++;
+			if (ch == 'r' || ch == 'R') r++;
+			if (ch == 's' || ch == 'S') s++;
+			if (ch == 't' || ch == 'T') t++;
+
+			if (ch == 'u' || ch == 'U') u++;
+			if (ch == 'v' || ch == 'V') v++;
+			if (ch == 'w' || ch == 'W') w++;
+			if (ch == 'x' || ch == 'X') x++;
+			if (ch == 'y' || ch == 'Y') y++;
+
+			if (ch == 'z' || ch == 'Z') z++;
+
+
+		}
+
+		else
+			break;
+	}
+	cout << "the number of a is " << a << endl;
+	cout << "the number of b is " << b << endl;
+	cout << "the number of c is " << c << endl;
+	cout << "the number of d is " << d << endl;
+	cout << "the number of e is " << e << endl;
+
+	cout << "the number of f is " << f << endl;
+	cout << "the number of g is " << g << endl;
+	cout << "the number of h is " << h << endl;
+	cout << "the number of i is " << i << endl;
+	cout << "the number of j is " << j << endl;
+
+	cout << "the number of k is " << k << endl;
+	cout << "the number of l is " << l << endl;
+	cout << "the number of m is " << m << endl;
+	cout << "the number of n is " << n << endl;
+	cout << "the number of o is " << o << endl;
+
+	cout << "the number of p is " << p << endl;
+	cout << "the number of q is " << q << endl;
+	cout << "the number of r is " << r << endl;
+	cout << "the number of s is " << s << endl;
+	cout << "the number of t is " << t << endl;
+
+	cout << "the number of u is " << u << endl;
+	cout << "the number of v is " << v << endl;
+	cout << "the number of w is " << w << endl;
+	cout << "the number of x is " << x << endl;
+	cout << "the number of y is " << y << endl;
+
+	cout << "the number of z is " << z << endl;
+
+	float total = q + w + e + r + t + y + u + i + o + p + a + s + d + f + g + h + j + k + l + z + x + c + v + b + n + m;
+	cout << "total:" << total << endl;
+	infile.close();                            
+	return 0;
+}
+
+
+//实验四-2-拓展i
+#include"pch.h"
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+	cout << "input:\n";
+	int space = 0;
+
+	while (true)
+	{
+		char char1;
+		cin.get(char1);
+		if (char1 != '#')
+		{
+			if (char1 == 32 ) space++;
+		}
+
+		else
+			break;
+	}
+	cout << "the number of space is " << space << endl;
+}
