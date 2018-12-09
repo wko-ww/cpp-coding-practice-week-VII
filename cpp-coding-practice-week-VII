@@ -1290,3 +1290,380 @@ int main(void)
 	}
 	cout << "the number of space is " << space << endl;
 }
+
+//四则运算
+#include"pch.h"
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include <iomanip>
+using namespace std;
+
+double sum(double x, double y)
+{
+	double z;
+	z = x + y;
+	return z;
+}
+double sub(double x, double y)
+{
+	double z;
+	z = x - y;
+	return z;
+}
+double mul(double x, double y)
+{
+	double z;
+	z = x * y;
+	return z;
+}
+double div(double x, double y)
+{
+	double z;
+	z = x / y;
+	return z;
+}
+
+int func_r1(char b2, char d2, int d3, int d4)
+{
+	if (b2 == '1' && d2 == '1')
+	{
+		cout << "\n(输出的随机数范围以 十 进 制 为标准)\n\n";
+		return rand();
+
+	}
+
+	if (b2 == '1' && d2 == '2')
+	{
+
+		cout << "\n(输出的随机数范围以 十 进 制 为标准)\n\n";
+		return (rand() % (d4 - d3) + d3);
+	}
+
+	if (b2 == '2')
+	{
+		char char1;
+		cout << "输入一个字符：\n";
+		cin >> char1;
+		return int(char1);
+	}
+}
+
+int func_r2(char b2, char d2, int d3, int d4)
+{
+	if (b2 == '1' && d2 == '1')
+	{
+		return rand();
+	}
+
+	if (b2 == '1' && d2 == '2')
+	{
+		return (rand() % (d4 - d3) + d3);
+	}
+
+	if (b2 == '2')
+	{
+		char char2;
+		cout << "输入一个字符：\n";
+		cin >> char2;
+		return int(char2);
+	}
+}
+
+char func_n1(char a2)
+{
+	switch (a2)
+	{
+	case('1'): return '+'; break;
+	case('2'): return '-'; break;
+	case('3'): return '*'; break;
+	case('4'): return '/'; break;
+	case('5'): return '+'; break;
+	case('6'): return '*'; break;
+	}
+}
+
+char func_n2(char a2)
+{
+	switch (a2)
+	{
+	case('5'): return '-'; break;
+	case('6'): return '/'; break;
+	}
+}
+
+
+
+void func_c(char a2, char b2, char c2, char d2, int d3, int d4, char e2)
+{
+	srand(time(NULL));
+
+	switch (e2)
+	{
+	case '1':
+		while (true)
+		{
+			switch (c2)
+			{
+			case'1': cout << oct << func_r1(b2, d2, d3, d4) << func_n1(a2) << func_r2(b2, d2, d3, d4) << '=' << '?' << endl;
+				if (a2 == '1' || a2 == '2' || a2 == '3' || a2 == '4')
+					break;
+				if (a2 == '5' || a2 == '6')
+				{
+					cout << oct << func_r1(b2, d2, d3, d4) << func_n2(a2) << func_r2(b2, d2, d3, d4) << '=' << '?' << endl;
+					break;
+				}
+
+			case'2': cout << dec << func_r1(b2, d2, d3, d4) << func_n1(a2) << func_r2(b2, d2, d3, d4) << '=' << '?' << endl;
+				if (a2 == '1' || a2 == '2' || a2 == '3' || a2 == '4')
+					break;
+				if (a2 == '5' || a2 == '6')
+				{
+					cout << dec << func_r1(b2, d2, d3, d4) << func_n2(a2) << func_r2(b2, d2, d3, d4) << '=' << '?' << endl;
+					break;
+				}
+
+			case'3': cout << hex << func_r1(b2, d2, d3, d4) << func_n1(a2) << func_r2(b2, d2, d3, d4) << '=' << '?' << endl;
+				if (a2 == '1' || a2 == '2' || a2 == '3' || a2 == '4')
+					break;
+				if (a2 == '5' || a2 == '6')
+				{
+					cout << hex << func_r1(b2, d2, d3, d4) << func_n2(a2) << func_r2(b2, d2, d3, d4) << '=' << '?' << endl;
+					break;
+				}
+			}
+
+			cout << ".................................................................................\n";
+			cout << "继续按1， 返回出题模块菜单按0:\n";
+			char m;
+			cin >> m;
+			if (m == '0') break;
+		}
+		break;
+
+	case '2':
+		while (true)
+		{
+			switch (c2)
+			{
+			case'1': cout << oct << '?' << func_n1(a2) << func_r2(b2, d2, d3, d4) << '=' << func_r1(b2, d2, d3, d4) << endl;
+				if (a2 == '1' || a2 == '2' || a2 == '3' || a2 == '4')
+					break;
+				if (a2 == '5' || a2 == '6')
+				{
+					cout << oct << '?' << func_n2(a2) << func_r2(b2, d2, d3, d4) << '=' << func_r1(b2, d2, d3, d4) << endl;
+					break;
+				}
+
+			case'2': cout << dec << '?' << func_n1(a2) << func_r2(b2, d2, d3, d4) << '=' << func_r1(b2, d2, d3, d4) << endl;
+				if (a2 == '1' || a2 == '2' || a2 == '3' || a2 == '4')
+					break;
+				if (a2 == '5' || a2 == '6')
+				{
+					cout << dec << '?' << func_n2(a2) << func_r2(b2, d2, d3, d4) << '=' << func_r1(b2, d2, d3, d4) << endl;
+					break;
+				}
+
+			case'3': cout << hex << '?' << func_n1(a2) << func_r2(b2, d2, d3, d4) << '=' << func_r1(b2, d2, d3, d4) << endl;
+				if (a2 == '1' || a2 == '2' || a2 == '3' || a2 == '4')
+					break;
+				if (a2 == '5' || a2 == '6')
+				{
+					cout << hex << '?' << func_n2(a2) << func_r2(b2, d2, d3, d4) << '=' << func_r1(b2, d2, d3, d4) << endl;
+					break;
+				}
+			}
+
+			cout << ".................................................................................\n";
+			cout << "继续按1， 返回出题模块菜单按0:\n";
+			char m;
+			cin >> m;
+			if (m == '0') break;
+		}
+		break;
+
+	case '3':
+		while (true)
+		{
+			switch (c2)
+			{
+			case'1': cout << oct << func_r1(b2, d2, d3, d4) << func_n1(a2) << '?' << '=' << func_r2(b2, d2, d3, d4) << endl;
+				if (a2 == '1' || a2 == '2' || a2 == '3' || a2 == '4')
+					break;
+				if (a2 == '5' || a2 == '6')
+				{
+					cout << oct << func_r1(b2, d2, d3, d4) << func_n2(a2) << '?' << '=' << func_r2(b2, d2, d3, d4) << endl;
+					break;
+				}
+
+			case'2': cout << dec << func_r1(b2, d2, d3, d4) << func_n1(a2) << '?' << '=' << func_r2(b2, d2, d3, d4) << endl;
+				if (a2 == '1' || a2 == '2' || a2 == '3' || a2 == '4')
+					break;
+				if (a2 == '5' || a2 == '6')
+				{
+					cout << dec << func_r1(b2, d2, d3, d4) << func_n2(a2) << '?' << '=' << func_r2(b2, d2, d3, d4) << endl;
+					break;
+				}
+
+			case'3': cout << hex << func_r1(b2, d2, d3, d4) << func_n1(a2) << '?' << '=' << func_r2(b2, d2, d3, d4) << endl;
+				if (a2 == '1' || a2 == '2' || a2 == '3' || a2 == '4')
+					break;
+				if (a2 == '5' || a2 == '6')
+				{
+					cout << hex << func_r1(b2, d2, d3, d4) << func_n2(a2) << '?' << '=' << func_r2(b2, d2, d3, d4) << endl;
+					break;
+				}
+			}
+
+			cout << ".................................................................................\n";
+			cout << "继续按1， 返回出题模块菜单按0:\n";
+			char m;
+			cin >> m;
+			if (m == '0') break;
+		}
+		break;
+	}
+}
+
+int main1(void)
+{
+	int i = 0;
+	while (true)
+	{
+		cout << ".................................................................................\n";
+		cout << "                                 >>>出题模块<<<                                  \n";
+		cout << "a.选择运算类型：\n";
+		cout << "a1. 加法	            a2. 减法                        a3. 乘法\n";
+		cout << "a4. 除法                    a5. 加减法                      a6. 乘除法\n\n";
+		cout << "b.选择随机数产生方法：\n";
+		cout << "b1. rand()	            b2. 字符常量\n\n";
+		cout << "c.选择进制类型：\n";
+		cout << "c1. 八进制（oct）	    c2. 十进制（dec）               c3. 十六进制（hex）\n\n";
+		cout << "d.选择数值范围：\n";
+		cout << "d1. 无范围	            d2. 有范围\n\n";
+		cout << "e.选择题目类型：\n";
+		cout << "e1.求结果，如1+2=？         e2.求操作数，如？+2=3           e3. 求操作数，如1+？=3\n\n";
+
+		
+
+		cout << "*若用rand()产生随机数且数值无范围，输入方式如[a1] b1 [c1] d1 [0] [0] [e1]\n";
+		cout << "*若用rand()产生随机数且数值有范围，为[a, b]，输入方式如[a1] b1 [c1] d2 a b+1 [e1]\n";
+		cout << "*若用字符常量产生随机数，输入方式如[a1] b2 [c1] [d1] [0] [0] [e1]\n\n";
+		cout << "注：1.此模块出题的数是正整数\n    2.上方中括号里面内容数字可替换\n    3.输出的随机数范围以 十 进 制 为标准\n    4.若选d2，输入的第二个数值不能大于2147483647\n    5.若选d2，输入的第二个数应大于第一个数\n    6.若除法运算产生值为0的除数，请忽略此题，按1进入下一题\n";
+		cout << "\n按0退出\n";
+		cout << ".................................................................................\n";
+
+		
+		cout << "按1开始， 按0退出:\n";
+		char b3;
+		cin >> b3;
+		
+		if (b3 == '0') break;
+
+
+
+		if (i != 0)
+		{
+			cout << "继续输入按1， 退出自动出题系统按0:\n";
+			char m;
+			cin >> m;
+			if (m == '0') break;
+		}
+
+		cout << "请按上述格式输入各选项:\n";
+		char a1, a2, b1, b2, c1, c2, d1, d2, e1, e2;
+		int d3, d4;
+		double d5;
+		cin >> a1 >> a2 >> b1 >> b2 >> c1 >> c2 >> d1 >> d2 >> d3 >> d5 >> e1 >> e2;
+
+	
+
+		while (d5 > 2147483647)
+		{
+			cout << "\n数值范围较大的数应小于等于2147483647！\n";
+			cout << "请重新输入数值范围！格式为： 较小的数<空格>较大的数：\n";
+			cin >> d3 >> d5;
+		}
+		d4 = int(d5);
+
+		func_c(a2, b2, c2, d2, d3, d4, e2);
+
+		i++;
+	}
+	return 0;
+}
+
+int main2()
+{
+	char op, ch;
+	double a, b, c;
+
+
+
+	do 
+	{
+		cout << "按1开始四则运算， 按0退出:\n";
+		char b3;
+		cin >> b3;
+
+		if (b3 == '0') break;
+
+		cout << "请输入运算符号：" << endl;
+		cin >> op;
+		cout << "请分别输入两个数：" << endl;
+		cin >> a >> b;
+		while (op == '/'&&b == 0)
+		{
+			cout << "除数不能为0,请重新输入两个数：" << endl;
+			cin >> a >> b; break;
+		}
+		switch (op)
+		{
+		case'+':c = sum(a, b); break;
+		case'-':c = sub(a, b); break;
+		case'*':c = mul(a, b); break;
+		case'/':c = div(a, b); break;
+		default:cout << "由于运算符非法，无法进行运算." << endl;
+		}
+		cout << "结果为：" << c << endl;
+		cout << "-----------------------" << endl;
+		cout << "按f继续运算，按其它键退出四则运算系统" << endl;
+		cin >> ch;
+	} while (ch == 'f');
+	return 0;
+}
+
+int main()
+{
+	int i = 0;
+	while (true)
+	{
+		cout << setw(80) << "*************************************" << endl;
+		cout << setw(80) << "*欢迎使用计算系统                   *" << endl;
+		cout << setw(80) << "*1.自动出题系统                     *" << endl;
+		cout << setw(80) << "*2.四则运算系统                     *" << endl;
+		cout << setw(80) << "*0.退出计算系统                     *" << endl;
+		cout << setw(80) << "*************************************" << endl;
+
+		if (i != 0)
+		{
+			cout << "继续按1，退出计算系统按0:\n";
+			char m;
+			cin >> m;
+			if (m == '0') break;
+		}
+
+		cout << setw(73) << "请按相应数字进入对应系统:" << endl;
+
+		char a;
+		cin >> a;
+		if (a == '1') main1();
+		if (a == '2') main2();
+		if (a == '0') break;
+
+		i++;
+	}
+	return 0;
+}
+
+
